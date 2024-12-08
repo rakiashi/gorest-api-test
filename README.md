@@ -41,8 +41,8 @@ The openapi.yml file documents all API endpoints. Use any Swagger UI tool to ren
 
 **_Testing Functionality_**
 
-- Functional tests for CRUD operations and error handling are implemented in the [./api-test/tests/] directory using Playwright + TypeScript.
-- Data-driven tests utilize JSON [./api-test/utils/test-data/test-data.json] with custom dynamic email and reusable methods.
+- Functional tests for CRUD operations and error handling are implemented in the *[./api-test/tests/]* directory using Playwright + TypeScript.
+- Data-driven tests utilize JSON *[test-data.json]* with custom dynamic email and reusable methods.
 - JSON schema validator for api response and logging the response to playwright report for ease debugging.
 
 ### Setup and Installation
@@ -55,15 +55,24 @@ The openapi.yml file documents all API endpoints. Use any Swagger UI tool to ren
 
 - Use _git clone https://github.com/rakiashi/gorest-api-test.git_
 - Unzip the project and navigate to project directory from your terminal
-- Install dependencies using npm command _npm install_
-- Run Functional tests on production enviornement for CRUD operations using npm command _npm run test:prod:crud_ 
-- To view/open latest tests report of playwright use npm command _npm run test:report:open_
+- Install dependencies using npm command
+  ```bash
+   npm install
+  ```
+- Run Functional tests on production enviornement for CRUD operations using npm command 
+  ```bash
+   npm run test:prod:crud
+  ```
+- To view/open latest tests report of playwright use npm command 
+  ```bash
+   npm run test:report:open
+  ```
 
 ### Github Actions
 
 - The github action workflow file is located in directory .github/workflows file name nodjs.yml
 - The workflow is triggered on every push to main branch or when a pull request is created
 - The workflow consist of jobs: 
--  Run Lint              # which does lint checks with cmd _npm run test:prod:crud_
--  Run CRUD Tests        # which runs CRUD tests with cmd _npm run test:prod:crud_
--  Run Regression Tests  # which runs Regression tests only if CRUD tests job is sucess with cmd _npm run test:prod:crud_
+-  Run Lint              # which performs lint checks using the command *npm run lint*
+-  Run CRUD Tests        # Run CRUD tests with the command *npm run test:prod:crud* , but only if the lint job completes successfully
+-  Run Regression Tests  # Runs regression tests only if the CRUD tests job succeeds, using the command: *npm run test:prod:regression*.
