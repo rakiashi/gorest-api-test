@@ -3,6 +3,9 @@
 
 name: GoRest Api Test Automation
 
+env:
+  BEARER_TOKEN: a6a25b876680017fdacd1574df313a063b8d0e8c769832dfd8bf5030b58ada9a
+
 on:
   push:
     branches: [ "main" ]
@@ -19,15 +22,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: 22
-    - name: Cache Node Modules
-      uses: actions/cache@v3
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-          
+        node-version: 22       
     - run: npm ci
     - run: npm run lint
 
@@ -42,7 +37,7 @@ jobs:
       with:
         node-version: 22
     - run: npm ci
-    - run: npm run test:prod:crud  # Replace with your CRUD test script
+    - run: npm run test:prod:crud  
     - uses: actions/upload-artifact@v3
       if: always()
       with:
