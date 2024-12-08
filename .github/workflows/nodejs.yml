@@ -4,7 +4,7 @@
 name: GoRest Api Test Automation
 
 env:
-  BEARER_TOKEN: ${{env.API_BEARER_TOKEN}}
+  BEARER_TOKEN: ${{ secrets.API_BEARER_TOKEN }} 
 
 on:
   push:
