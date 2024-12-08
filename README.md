@@ -4,7 +4,7 @@ This repository provides a comprehensive api testing framework using playwright 
 
 - OpenAPI documentation for API specifications.
 - Functional testing of CRUD operations and generic api tests of different status codes
-- Schema validation, logging api response and reporting.
+- Schema validation, logging api response and reporting using built in playwright report
 - Automated workflows with GitHub Actions.
 
 ### Project-Structure
@@ -56,11 +56,14 @@ The openapi.yml file documents all API endpoints. Use any Swagger UI tool to ren
 - Use _git clone https://github.com/rakiashi/gorest-api-test.git_
 - Unzip the project and navigate to project directory from your terminal
 - Install dependencies using npm command _npm install_
-- Functional tests for CRUD operations run npm command _npm run test:prod:crud_ 
-- Playwright report of latest tests run can be viwed using npm command _npm run test:report:open_
+- Run Functional tests on production enviornement for CRUD operations using npm command _npm run test:prod:crud_ 
+- To view/open latest tests report of playwright use npm command _npm run test:report:open_
 
 ### Github Actions
 
-- The github action workflow file is located in directory .github/workflows file name main.yml
+- The github action workflow file is located in directory .github/workflows file name nodjs.yml
 - The workflow is triggered on every push to main branch or when a pull request is created
-- The workflow consist of single jobs: Build-and-Test # which runs playwright-test-runner tests with cmd _npm run test:prod:crud_
+- The workflow consist of jobs: 
+-  Run Lint              # which does lint checks with cmd _npm run test:prod:crud_
+-  Run CRUD Tests        # which runs CRUD tests with cmd _npm run test:prod:crud_
+-  Run Regression Tests  # which runs Regression tests only if CRUD tests job is sucess with cmd _npm run test:prod:crud_
