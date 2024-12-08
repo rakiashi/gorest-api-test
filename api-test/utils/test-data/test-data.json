@@ -1,0 +1,35 @@
+{
+  "validData": {
+    "name": "First Name Last Name",
+    "gender": "male",
+    "email": "{{emailId}}",
+    "status": "active"
+  },
+  "nameRequiredData": {
+    "gender": "male",
+    "email": "{{emailId}}",
+    "status": "active"
+  },
+  "emailRequiredData": {
+    "name": "First Name Last Name",
+    "gender": "male",
+    "status": "active"
+  },
+  "genderRequiredData": {
+    "name": "First Name Last Name",
+    "email": "{{emailId}}",
+    "status": "active"
+  },
+  "invalidData": {
+    "name": "@##",
+    "gender": "#$%%%",
+    "email": "@###",
+    "status": "@###"
+  },
+  "emailExistData": {
+    "name": "john do",
+    "gender": "male",
+    "email": "john.doe@example.com",
+    "status": "active"
+  }
+}

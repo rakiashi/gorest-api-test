@@ -1,0 +1,35 @@
+{
+  "name": "gorest-api-test",
+  "scripts": {
+    "lint": "npx eslint .",
+    "prettier": "prettier --write .",
+    "lint-fix": "npx eslint . --fix",
+    "test": "npx playwright test",
+    "test:report:open": "npx playwright show-report",
+    "test:develop:regression": "ENV=develop npx playwright test --grep=@Regression",
+    "test:prod:regression": "ENV=develop npx playwright test --grep=@Regression",
+    "test:develop:crud": "ENV=prod npx playwright test --grep=@CRUD",
+    "test:prod:crud": "ENV=prod npx playwright test --grep=@CRUD"
+  },
+  "keywords": [],
+  "author": "Rakesh",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.49.0",
+    "ajv": "^8.17.1",
+    "dotenv": "^16.4.7",
+    "http-status-codes": "^2.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/node": "^22.10.1",
+    "ajv-formats": "^3.0.1",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.13.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0"
+  }
+}

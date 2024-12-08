@@ -1,0 +1,8 @@
+{
+  "userRequest": {
+    "name": "First Name Last Name",
+    "gender": "male",
+    "email": "{{emailId}}",
+    "status": "active"
+  }
+}
